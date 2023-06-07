@@ -59,15 +59,8 @@ const createUser = asyncHandler(async (req, res) => {
   const userNameCheck = await User.findOne({ username });
   //   user Name Validation
   if (userNameCheck) {
-    return res.status(400).json({ message: "User Name already exists" });
+    return res.status(400).json({ message: "Username already exists" });
   }
-
-  // // number existance
-  // const phoneCheck = await User.findOne({ phone });
-  // //   number Validation
-  // if (phoneCheck) {
-  //   return res.status(400).json({ message: "Number already exists" });
-  // }
 
   // hash password
   const hash = await bcrypt.hash(password, 10);

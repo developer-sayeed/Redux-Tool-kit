@@ -37,13 +37,15 @@ export const userSlice = createSlice({
         state.user = state.user.filter((data) => data._id !== payload);
         state.loading = false;
       })
+
       .addCase(createUser.pending, (state, { type, payload }) => {
         state.loading = true;
       })
+
       .addCase(createUser.fulfilled, (state, { type, payload }) => {
-        state.user.push(payload.data.user);
+        state.user.push(payload.user);
         state.loading = false;
-        state.message = payload.data.message;
+        state.message = payload.message;
       })
 
       .addCase(createUser.rejected, (state, { type, payload }) => {

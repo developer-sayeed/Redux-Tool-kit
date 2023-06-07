@@ -1,6 +1,5 @@
-import Counter from "./features/Counter/Counter";
-import Todo from "./features/Todo/Todo";
 import User from "./features/User/User";
+import Student from "./features/student/Student";
 
 function App() {
   return (

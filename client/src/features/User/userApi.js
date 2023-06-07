@@ -21,7 +21,13 @@ export const deleteUser = createAsyncThunk("user/deleteUser", async (id) => {
 //  Create  User data
 
 export const createUser = createAsyncThunk("user/createUser", async (data) => {
-  const response = await axios.post(`http://localhost:5050/api/v1/user/`, data);
-  console.log(response);
-  return response;
+  try {
+    const response = await axios.post(
+      `http://localhost:5050/api/v1/user/`,
+      data
+    );
+    console.log(response.data);
+  } catch (error) {
+    return error.response.data.message;
+  }
 });

@@ -21,7 +21,7 @@ const userSchema = mongoose.Schema(
       type: Number,
       trim: true,
     },
-    password: { 
+    password: {
       type: String,
       required: true,
       trim: true,
@@ -54,4 +54,4 @@ const userSchema = mongoose.Schema(
 );
 
 // export model
-module.exports = mongoose.model("User", userSchema);
+module.exports = mongoose.model("user", userSchema);
